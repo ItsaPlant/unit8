@@ -1,0 +1,13 @@
+.contact{
+    font-size: 19px;
+    color: brown;
+    border: 1px solid black;
+    padding: 3px;
+    font-variant: small-caps;
+}
+.name{
+    font-size:larger;
+    font-style: initial;
+    font-family: 'Courier New', Courier, monospace;
+    font-variant: small-caps;
+}
