@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+
+        <h2>WAREHOUSE</h2>
+        <img src="{{url_for('static', filename='logo.jpg')}}" alt="Another meme" />
+        <ul>
+            {% for item in items%}
+            <li>{{item}}</li>
+            {%endfor%}
+        </ul>
+    </body>
+
+</html>
