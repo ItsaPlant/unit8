@@ -5,19 +5,18 @@ from flask import render_template
 
 app = Flask(__name__)
 
-messages = []
-
-@app.route("/mypage/me")
+@app.route("/mypage/me", methods=["GET", "POST"])
 def hello():
-    return render_template("me.html")
+    if request.method=="GET":
+        return render_template("me.html")
+    elif request.method=="POST":
+        return redirect("/mypage/contact")
 
-@app.route("/mypage/contact")
+@app.route("/mypage/contact", methods=["GET", "POST"])
 def contact_page():
     if request.method =="GET":
         return render_template("name_form.html")
     elif request.method =="POST":
-        #print(request.form)
-        messages.append(request.form)
+        message = request.form
+        print("here")
         return redirect("/mypage/me")
-
-print(messages)
